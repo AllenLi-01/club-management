@@ -1,6 +1,5 @@
 ## Club-management
-
-基于vue-admin-template框架开发的社团管理系统。
+基于vue-admin-template框架开发的社团管理系统。技术栈为Vue2.
 ## Mock数据
 所需Mock数据可由Apifox提供的远程mock url提供。  
 baseURL: https://mock.apifox.cn/m1/3356453-0-default
