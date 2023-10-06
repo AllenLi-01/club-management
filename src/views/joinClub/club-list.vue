@@ -52,7 +52,7 @@
         <!--width="250px"!-->
 
         <template slot-scope="{ row }">
-          <el-tag effect="dark" :type="showTypeTags(row.type)">{{
+          <el-tag class="custom-tag" effect="dark" :type="showTypeTags(row.type)">{{
             row.type
           }}</el-tag>
         </template>
@@ -264,9 +264,9 @@ export default {
           const club_id = row.id;
           const apply_time = getCurTime();
           const joinData = {
-            applicant_id: applicant_id,
-            club_id: club_id,
-            apply_time: apply_time,
+            applicantId: applicant_id,
+            clubId: club_id,
+            applyTime: apply_time,
           };
 
           join(joinData)
@@ -331,3 +331,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.custom-tag{
+  font-size: 14px; /* 可选：自定义标签内文本的字体大小 */
+  padding: 0px 12px; /* 自定义标签的内边距，增加标签的高度和宽度 */
+  text-align: center;
+  font-weight: bold;
+}
+</style>
