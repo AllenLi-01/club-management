@@ -76,7 +76,7 @@
       <el-table-column label="操作" align="center">
         <template v-slot="{ row }">
           <el-button
-            v-if="row.status !== 'REJECTED'"
+            v-if="row.status === 'PENDING'"
             type="danger"
             icon="el-icon-circle-close"
             @click="handleCancelApply(row)"
