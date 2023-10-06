@@ -264,9 +264,9 @@ export default {
           const club_id = row.id;
           const apply_time = getCurTime();
           const joinData = {
-            applicant_id: applicant_id,
-            club_id: club_id,
-            apply_time: apply_time,
+            applicantId: applicant_id,
+            clubId: club_id,
+            applyTime: apply_time,
           };
 
           join(joinData)

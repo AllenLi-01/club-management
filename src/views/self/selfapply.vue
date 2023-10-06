@@ -45,22 +45,22 @@
       <el-table-column label="申请内容" align="center" width="300%">
         <template v-slot="{ row }" style="text-align: center">
           <p v-if="row.type === 'JOIN_CLUB'">
-            申请加入社团「{{ row.club_name }}」
+            申请加入社团「{{ row.clubName }}」
           </p>
           <p v-else-if="row.type === 'CLUB_CREATE'">
-            申请创建社团「{{ row.application_detail.name }}」
+            申请创建社团「{{ row.applicationDetail.name }}」
           </p>
           <p v-else-if="row.type === 'CLUB_SHUTDOWN'">
-            申请撤销社团「{{ row.application_detail.name }}」
+            申请撤销社团「{{ row.applicationDetail.name }}」
           </p>
           <p v-else-if="row.type === 'ACTIVITY'">
-            社团「{{ row.club_name }}」申请举行活动「{{
-              row.application_detail.activity_name
+            社团「{{ row.clubName }}」申请举行活动「{{
+              row.applicationDetail.activity_name
             }}」
           </p>
         </template>
       </el-table-column>
-      <el-table-column label="申请时间" prop="apply_time" align="center">
+      <el-table-column label="申请时间" prop="applyTime" align="center">
       </el-table-column>
 
       <el-table-column label="当前申请状态" prop="TYPE" align="center">
@@ -145,13 +145,13 @@ export default {
         id: undefined,
         page: 1,
         limit: 20,
-        application_detail: undefined,
-        reviewer_id: undefined,
-        review_time: undefined,
-        apply_time: undefined,
+        applicationDetail: undefined,
+        reviewerId: undefined,
+        reviewTime: undefined,
+        applyTime: undefined,
         status: undefined,
-        club_id: undefined,
-        applicant_id: undefined,
+        clubId: undefined,
+        applicantId: undefined,
       },
       importanceOptions: [1, 2, 3],
       clubTypes: [],
@@ -292,9 +292,9 @@ export default {
           const club_id = row.id;
           const apply_time = getCurTime();
           const joinData = {
-            applicant_id: applicant_id,
-            club_id: club_id,
-            apply_time: apply_time,
+            applicantId: applicant_id,
+            clubId: club_id,
+            applyTime: apply_time,
           };
 
           join(joinData)
