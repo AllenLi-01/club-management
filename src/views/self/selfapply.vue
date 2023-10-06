@@ -65,7 +65,7 @@
 
       <el-table-column label="当前申请状态" prop="TYPE" align="center">
         <template v-slot="{ row }">
-          <el-tag effect="dark" :type="showTypeTags(row.status)">
+          <el-tag  class="custom-tag"  effect="dark" :type="showTypeTags(row.status)">
             <span v-if="row.status === 'REJECTED'">申请被驳回</span>
             <span v-else-if="row.status === 'PENDING'">申请待审核</span>
             <span v-else>申请已通过</span>
@@ -83,8 +83,11 @@
           >
             取消申请
           </el-button>
-          <el-button v-else type="info" :disabled="true">
-            已不可取消
+          <el-button v-else-if="row.status==='REJECTED'" type="info" :disabled="true">
+           已不可取消
+          </el-button>
+          <el-button v-else type="success" :disabled="true">
+            申请已通过
           </el-button>
         </template>
       </el-table-column>
@@ -359,3 +362,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.custom-tag{
+  font-size: 14px; /* 可选：自定义标签内文本的字体大小 */
+  padding: 0px 12px; /* 自定义标签的内边距，增加标签的高度和宽度 */
+  text-align: center;
+  font-weight: bold;
+}
+</style>
